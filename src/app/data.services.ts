@@ -12,14 +12,14 @@ export class DataServices{
         //Cargar Personas
         cargarPersonas(){
            const token = this.loginService.getIdToken();
-           return this.httpclient.get<Persona[]>('https://listado-personas-angular-92172-default-rtdb.firebaseio.com/datos.json?auth=' + token);
+           return this.httpclient.get<Persona[]>('Poner tu dominio aqui/datos.json?auth=' + token);
         }
 
         //Guardar persona
         guardarPersonas(personas: Persona[]){
 
             const token = this.loginService.getIdToken();
-            this.httpclient.put('https://listado-personas-angular-92172-default-rtdb.firebaseio.com/datos.json?auth=' + token, personas)
+            this.httpclient.put('Poner tu dominio aqui/datos.json?auth=' + token, personas)
             .subscribe(
                 response => console.log("Persona guardada" + response),
                 error => console.log("Error al guardar persona: " + error)
@@ -31,7 +31,7 @@ export class DataServices{
 
             const token = this.loginService.getIdToken();
             let url: string;
-            url = 'https://listado-personas-angular-92172-default-rtdb.firebaseio.com/datos/' + index + '.json?auth=' + token;
+            url = 'Poner tu dominio aqui/datos/' + index + '.json?auth=' + token;
             this.httpclient.put(url, persona)
                 .subscribe(
                     response => console.log("Persona modificada: " + response),
@@ -44,7 +44,7 @@ export class DataServices{
 
             const token = this.loginService.getIdToken();
             let url: string;
-            url = 'https://listado-personas-angular-92172-default-rtdb.firebaseio.com/datos/' + index + '.json?auth=' + token;
+            url = 'Poner tu dominio aqui/datos/' + index + '.json?auth=' + token;
             this.httpclient.delete(url)
                 .subscribe(
                     response => console.log("Persona eliminada: " + response),
