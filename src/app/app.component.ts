@@ -18,8 +18,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     
     firebase.initializeApp({
-      apiKey: "AIzaSyDE3Pd1AaKsO2R8LkWsVMArLVrDmpQcl9I",
-      authDomain: "listado-personas-angular-92172.firebaseapp.com"
+      apiKey: "Poner tu api key aqui",
+      authDomain: "Poner tu dominio aqui"
     })
   }
 
